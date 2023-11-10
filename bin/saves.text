@@ -1,7 +1,0 @@
-    public void mostrarDonaciones() {
-        System.out.println("Lista de donaciones de: " + nombre);
-        donaciones.sort(Comparator.comparing(Donacion::getFecha));
-        for (Donacion d : donaciones) {
-            System.out.println(d);
-        }
-    }

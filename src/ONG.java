@@ -57,17 +57,17 @@ public class ONG {
         int cobradas = 0, rechazadas = 0, pendientes = 0;
         double totalCobrado = 0, montoMax = 0, montoMin = Double.MAX_VALUE;
 
-        for (Donacion d : donaciones) {
-            if (d.getFecha().isAfter(fechaLimite)) {
+        for (Donacion donacion : donaciones) {
+            if (donacion.getFecha().isAfter(fechaLimite)) {
                 continue;
             }
 
-            switch (d.getEstado()) {
+            switch (donacion.getEstado()) {
                 case COBRADA:
                     cobradas++;
-                    totalCobrado += d.getMonto();
-                    if (d.getMonto() > montoMax) montoMax = d.getMonto();
-                    if (d.getMonto() < montoMin) montoMin = d.getMonto();
+                    totalCobrado += donacion.getMonto();
+                    if (donacion.getMonto() > montoMax) montoMax = donacion.getMonto();
+                    if (donacion.getMonto() < montoMin) montoMin = donacion.getMonto();
                     break;
                 case RECHAZADA:
                     rechazadas++;
@@ -78,18 +78,17 @@ public class ONG {
             }
         }
 
-        System.out.println("Estado de resultado de: " + nombre + " al: " + fechaLimite);
+        System.out.println("Estado de: " + nombre + " al: " + fechaLimite);
         System.out.println("- Cobradas: " + cobradas);
         System.out.println("- Rechazadas: " + rechazadas);
         System.out.println("- Pendientes: " + pendientes);
 
         if (cobradas > 0) {
             System.out.println("- Monto Total: $ " + totalCobrado);
-            System.out.println("- Monto máximo: $ " + montoMax);
-            System.out.println("- Monto mínimo: $ " + (montoMin == Double.MAX_VALUE ? 0 : montoMin));
+            System.out.println("- Monto maximo: $ " + montoMax);
+            System.out.println("- Monto minimo: $ " + (montoMin == Double.MAX_VALUE ? 0 : montoMin));
             System.out.println("- Monto medio: $ " + (totalCobrado / cobradas));
         }
     }
 
-    // Otros métodos según sea necesario
 }

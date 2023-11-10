@@ -17,7 +17,10 @@ public class Main {
     Donacion dc5 = org.cargarDonacion(dt5, LocalDate.of(2023,10,15), 30);
     Donacion dc6 = org.cargarDonacion(dt1, LocalDate.of(2023,11,7), 100);
     Donacion dc7 = org.cargarDonacion(dt2, LocalDate.of(2023,11,2), 100);
+    Donacion dc8 = org.cargarDonacion(dt3, LocalDate.of(2023,11,9), 60);
     Donacion dc9 = org.cargarDonacion(dt4, LocalDate.of(2023,11,10), 50);
+    Donacion dc10 = org.cargarDonacion(dt5, LocalDate.of(2023,11,11), 90);
+    
     // b.4 Actualizacion de Donaciones
     dc1.setCobrada();
     dc2.setCobrada();
