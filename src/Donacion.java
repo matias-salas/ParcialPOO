@@ -16,6 +16,10 @@ public class Donacion {
         this.estado = Estado.PENDIENTE;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setCobrada() {
         this.estado = Estado.COBRADA;
     }

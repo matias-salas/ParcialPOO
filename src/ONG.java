@@ -13,16 +13,32 @@ public class ONG {
     }
 
     public Donante registrarDonante(String nombre, String apellido) {
-        Donante newDonante = new Donante(nombre, apellido);
-        if (!donantes.add(newDonante)) {
-            for (Donante donante : donantes) {
-                if (donante.equals(newDonante)) {
-                    return donante;
-                }
+        Donante donanteTemp = new Donante(nombre, apellido, false);
+        for (Donante donante : donantes) {
+            if (donante.equals(donanteTemp)) {
+                return donante; 
             }
         }
+        Donante newDonante = new Donante(nombre, apellido, true);
+        donantes.add(newDonante);
         return newDonante;
     }
+    
+    // Basandome en la explicacion en la clase Donante este metodo incrementa el id del donante, es decir el equals funcionaba bien
+    // Pero de todas formas incrementaba el id, se puede probar con el TestRegistro y se puede ver que el id de donante 2 es 2 y no 1
+    // Te muestro el codigo que tenia antes de cambiarlo
+
+    // public Donante registrarDonante(String nombre, String apellido) {
+    //     Donante newDonante = new Donante(nombre, apellido);
+    //     if (!donantes.add(newDonante)) {
+    //         for (Donante donante : donantes) {
+    //             if (donante.equals(newDonante)) {
+    //                 return donante;
+    //             }
+    //         }
+    //     }
+    //     return newDonante;
+    // }
 
     public Donacion cargarDonacion(Donante donante, LocalDate fecha, double monto) {
         Donacion newDonacion = new Donacion(donante, fecha, monto);
