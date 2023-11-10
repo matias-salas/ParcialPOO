@@ -36,6 +36,6 @@ public class Donante {
     
     @Override
     public String toString() {
-        return  "(" + id + ") " + apellido + ", " + nombre;
+        return "(" + id + ") " + apellido + ", " + nombre;
     }
 }

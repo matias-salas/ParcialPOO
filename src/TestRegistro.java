@@ -1,6 +1,6 @@
     public class TestRegistro {
         public static void main(String[] args) {
-            ONG organizacion = new ONG("Teste registro");
+            ONG organizacion = new ONG("Test registro");
     
             Donante donante1 = organizacion.registrarDonante("Roberto", "Carlos");
             Donante donante2 = organizacion.registrarDonante("Roberto", "Carlos");
